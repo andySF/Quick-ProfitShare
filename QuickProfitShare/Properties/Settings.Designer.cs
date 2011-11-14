@@ -25,7 +25,7 @@ namespace QuickProfitShare.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0102c286fab108ae8b6dd19571b1181a")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ad_client {
             get {
                 return ((string)(this["ad_client"]));
@@ -44,6 +44,18 @@ namespace QuickProfitShare.Properties {
             }
             set {
                 this["autoStart"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lastLink {
+            get {
+                return ((string)(this["lastLink"]));
+            }
+            set {
+                this["lastLink"] = value;
             }
         }
     }

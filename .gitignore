@@ -1,0 +1,6 @@
+sh.exe.stackdump
+bash.exe.stackdump
+QuickProfitShare/bin/*
+QuickProfitShare/bin/
+QuickProfitShare/obj/*
+QuickProfitShare/obj/

@@ -20,19 +20,48 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.notifyIconQuickProfitShare = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStripRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MonitorizeazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.textBoxAdClient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxAutoStart = new System.Windows.Forms.CheckBox();
+            this.optiuniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UltimulLinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.contextMenuStripRightClick.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconQuickProfitShare
             // 
+            this.notifyIconQuickProfitShare.ContextMenuStrip = this.contextMenuStripRightClick;
             this.notifyIconQuickProfitShare.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconQuickProfitShare.Icon")));
             this.notifyIconQuickProfitShare.Text = "Quick ProfitShare";
             this.notifyIconQuickProfitShare.Visible = true;
             this.notifyIconQuickProfitShare.BalloonTipClicked += new System.EventHandler(this.notifyIconQuickProfitShare_BalloonTipClicked);
+            this.notifyIconQuickProfitShare.DoubleClick += new System.EventHandler(this.notifyIconQuickProfitShare_DoubleClick);
+            // 
+            // contextMenuStripRightClick
+            // 
+            this.contextMenuStripRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optiuniToolStripMenuItem,
+            this.MonitorizeazaToolStripMenuItem,
+            this.UltimulLinkToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.contextMenuStripRightClick.Name = "contextMenuStripRightClick";
+            this.contextMenuStripRightClick.Size = new System.Drawing.Size(192, 92);
+            // 
+            // MonitorizeazaToolStripMenuItem
+            // 
+            this.MonitorizeazaToolStripMenuItem.Checked = true;
+            this.MonitorizeazaToolStripMenuItem.CheckOnClick = true;
+            this.MonitorizeazaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MonitorizeazaToolStripMenuItem.Name = "MonitorizeazaToolStripMenuItem";
+            this.MonitorizeazaToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.MonitorizeazaToolStripMenuItem.Text = "Oprește Monitorizarea";
+            this.MonitorizeazaToolStripMenuItem.Click += new System.EventHandler(this.MonitorizeazaToolStripMenuItem_Click);
             // 
             // btnSave
             // 
@@ -44,14 +73,15 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button1
+            // buttonCancel
             // 
-            this.button1.Location = new System.Drawing.Point(343, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Renunță";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCancel.Location = new System.Drawing.Point(343, 87);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 0;
+            this.buttonCancel.Text = "Renunță";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // textBoxAdClient
             // 
@@ -79,20 +109,59 @@
             this.checkBoxAutoStart.Text = "Pornește cu Windows";
             this.checkBoxAutoStart.UseVisualStyleBackColor = true;
             // 
+            // optiuniToolStripMenuItem
+            // 
+            this.optiuniToolStripMenuItem.Image = global::QuickProfitShare.Properties.Resources.optiuni;
+            this.optiuniToolStripMenuItem.Name = "optiuniToolStripMenuItem";
+            this.optiuniToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.optiuniToolStripMenuItem.Text = "Opțiuni";
+            this.optiuniToolStripMenuItem.Click += new System.EventHandler(this.optiuniToolStripMenuItem_Click);
+            // 
+            // UltimulLinkToolStripMenuItem
+            // 
+            this.UltimulLinkToolStripMenuItem.Image = global::QuickProfitShare.Properties.Resources.link;
+            this.UltimulLinkToolStripMenuItem.Name = "UltimulLinkToolStripMenuItem";
+            this.UltimulLinkToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.UltimulLinkToolStripMenuItem.Text = "Copiează ultimul Link";
+            this.UltimulLinkToolStripMenuItem.Click += new System.EventHandler(this.UltimulLinkToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = global::QuickProfitShare.Properties.Resources.exit;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.exitToolStripMenuItem.Text = "EXIT";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 100);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(101, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "www.olteteanu.com";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 122);
-            this.Controls.Add(this.checkBoxAutoStart);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.checkBoxAutoStart);
             this.Controls.Add(this.textBoxAdClient);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
-            this.Text = "Quick ProfitShare";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quick-ProfitShare";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.contextMenuStripRightClick.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,10 +171,16 @@
 
         private System.Windows.Forms.NotifyIcon notifyIconQuickProfitShare;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.TextBox textBoxAdClient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxAutoStart;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripRightClick;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optiuniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MonitorizeazaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UltimulLinkToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
